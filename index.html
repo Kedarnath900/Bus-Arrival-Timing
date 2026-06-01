@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bus Arrival Timing</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        width: 350px;
+        box-shadow: 0px 0px 10px gray;
+      }
+
+      h2 {
+        color: darkblue;
+      }
+
+      select,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: darkblue;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      #result {
+        margin-top: 20px;
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>🚌 Bus Arrival Timing</h2>
+
+      <select id="bus">
+        <option>Bus 101</option>
+        <option>Bus 102</option>
+        <option>Bus 103</option>
+        <option>Bus 104</option>
+        <option>Bus 105</option>
+        <option>Bus 106</option>
+        <option>Bus 107</option>
+        <option>Bus 108</option>
+        <option>Bus 109</option>
+        <option>Bus 110</option>
+        <option>Bus 111</option>
+        <option>Bus 112</option>
+        <option>Bus 113</option>
+        <option>Bus 114</option>
+        <option>Bus 115</option>
+        <option>Bus 116</option>
+        <option>Bus 117</option>
+        <option>Bus 118</option>
+        <option>Bus 119</option>
+        <option>Bus 120</option>
+      </select>
+
+      <select id="stop">
+        <option>Majestic</option>
+        <option>Silk Board</option>
+        <option>Marathahalli</option>
+        <option>Whitefield</option>
+        <option>KR Puram</option>
+        <option>Hebbal</option>
+        <option>Electronic City</option>
+        <option>Banashankari</option>
+        <option>BTM Layout</option>
+        <option>Jayanagar</option>
+        <option>MG Road</option>
+        <option>Indiranagar</option>
+        <option>Yelahanka</option>
+        <option>Bellandur</option>
+        <option>Hosur Road</option>
+        <option>Tin Factory</option>
+        <option>Shivajinagar</option>
+        <option>Koramangala</option>
+        <option>Airport</option>
+        <option>Angondahalli</option>
+      </select>
+
+      <button onclick="checkArrival()">Check Timing</button>
+
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function checkArrival() {
+        let bus = document.getElementById("bus").value;
+
+        let stop = document.getElementById("stop").value;
+
+        let arrival = Math.floor(Math.random() * 10) + 1;
+
+        let reach = arrival + 20;
+
+        document.getElementById("result").innerHTML =
+          bus +
+          " will arrive at " +
+          stop +
+          " in " +
+          arrival +
+          " minutes.<br><br>" +
+          "Estimated destination reach time: " +
+          reach +
+          " minutes.";
+      }
+    </script>
+  </body>
+</html>
